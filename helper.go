@@ -118,19 +118,19 @@ func (wa *Whatsapp) sendMessage(request any) (res map[string]interface{}, err er
 		return res, err
 	}
 
-	bodyBytes, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return res, err
-	}
-	resp.Body = io.NopCloser(bytes.NewBuffer(bodyBytes))
-	err = json.Unmarshal(bodyBytes, &req)
+	//bodyBytes, err := io.ReadAll(resp.Body)
+	//if err != nil {
+	//	return res, err
+	//}
+	//resp.Body = io.NopCloser(bytes.NewBuffer(bodyBytes))
+	//err = json.Unmarshal(bodyBytes, &req)
 
-	var b bytes.Buffer
-	_, err = io.Copy(&b, resp.Body)
+	//var b bytes.Buffer
+	//_, err = io.Copy(&b, resp.Body)
 
-	if err != nil {
-		return res, err
-	}
+	//if err != nil {
+	//	return res, err
+	//}
 	err = json.NewDecoder(resp.Body).Decode(&res)
 
 	if err != nil {
