@@ -1,4 +1,4 @@
-module github.com/febriliankr/whatsapp-cloud-api
+module github.com/masewo/whatsapp-cloud-api
 
 go 1.19
 
